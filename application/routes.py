@@ -9,6 +9,6 @@ from wtforms import StringField, SubmitField
 
 @app.route('/players', methods=['GET', 'POST'])
 @app.route('/', methods = ['GET', 'POST'])
-def home():
+def players():
     if request.method =="GET":
        return render_template("players.html", query=Players.query.all())
