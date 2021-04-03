@@ -1,7 +1,11 @@
 version: '3.7'
-image: abusyd1/teamchooser:test
-build: ./
-ports:
-- target: 5000
-  published: 5000
-  protocol: tcp
+services:
+    teamchooser:
+        image: abusyd1/teamchooser
+        build: ./
+    db:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: example
