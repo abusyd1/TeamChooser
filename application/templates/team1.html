@@ -1,0 +1,40 @@
+{% block body %}
+<table style="margin-left: 20px;">
+    <!-- Table headers -->
+        <th>
+             <tr style="color: black; ">
+    
+            <th>Team</th>
+            <th>Player</th>
+             </tr>
+        </th>
+    
+
+{% for player in query %}
+{% if player.attack_rating > 85 %}
+<div>
+<tr>
+    <td>
+        1
+    </td>
+ <td>
+     {{player.name}} 
+ </td>    
+</tr>
+</div>
+{% elif player.attack_rating < 85 %}
+<div>
+    <tr>
+        <td>
+            2
+        </td>
+     <td>
+         {{player.name}} 
+     </td>    
+    </tr>
+    </div>
+{% endif %}
+{% endfor %}
+
+
+{% endblock body %}

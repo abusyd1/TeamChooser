@@ -12,3 +12,8 @@ from wtforms import StringField, SubmitField
 def players():
     if request.method =="GET":
        return render_template("players.html", query=Players.query.all())
+
+@app.route('/team1', methods=['GET', 'POST'])
+def team1():
+    if request.method =="GET":
+       return render_template("team1.html", query=Players.query.all())
