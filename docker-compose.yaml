@@ -1,12 +1,7 @@
 version: '3.7'
 services:
     teamchooser:
-        image: abusyd1/teamchooser:testing
-        build: ./
-    mysql_db_container:
-        image: mysql:latest
-        command: --default-authentication-plugin=mysql_native_password
-        environment:
-            MYSQL_ROOT_PASSWORD: rootpassword
         ports:
-            - 3306:3306   
+            - '5000:5000'
+        image: 'abusyd1/teamchooser:testing'
+        build: ./
